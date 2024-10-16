@@ -2,7 +2,6 @@ package ftracker
 
 import (
 	"fmt"
-	"math"
 )
 
 // Основные константы, необходимые для расчетов.
@@ -105,7 +104,7 @@ func WalkingSpentCalories(action int, duration, weight, height float64) float64 
 	// ваш код здесь
 	var caloriesWalking float64
 	averageSpeed := meanSpeed(action, duration) * kmhInMsec
-	caloriesWalking = ((walkingCaloriesWeightMultiplier*weight + (averageSpeed*averageSpeed)/height/cmInM)*walkingSpeedHeightMultiplier*weight) * duration * minInH)
+	caloriesWalking = ((walkingCaloriesWeightMultiplier*weight + (averageSpeed*averageSpeed)/height/cmInM) * walkingSpeedHeightMultiplier * weight) * duration * minInH
 	return caloriesWalking
 }
 
